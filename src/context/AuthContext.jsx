@@ -26,8 +26,8 @@ export const AuthProvider = ({ children }) => {
     fetchUser();
   }, []);
 
-  const login = async (username, password) => {
-    const response = await api.post('/auth/jwt/create/', { username, password });
+  const login = async (email, password) => {
+    const response = await api.post('/auth/jwt/create/', { email, password });
     const { access, refresh } = response.data;
     localStorage.setItem('access_token', access);
     localStorage.setItem('refresh_token', refresh);

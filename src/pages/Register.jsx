@@ -6,7 +6,7 @@ import { useAuth } from '../context/AuthContext';
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    username: '',
+    name: '',
     email: '',
     password: '',
     re_password: ''
@@ -90,16 +90,16 @@ const Register = () => {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <label className="text-sm font-medium">Username</label>
+            <label className="text-sm font-medium">Full Name</label>
             <div className="relative">
               <User className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" size={20} />
               <input 
-                name="username"
+                name="name"
                 type="text" 
                 required 
                 className="pl-12"
-                placeholder="Choose a username"
-                value={formData.username}
+                placeholder="Enter your full name"
+                value={formData.name}
                 onChange={handleChange}
               />
             </div>

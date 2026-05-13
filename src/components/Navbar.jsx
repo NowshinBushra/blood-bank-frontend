@@ -31,6 +31,14 @@ const Navbar = () => {
           {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
         </button>
 
+        <Link 
+          to={user ? "/create-request" : "/login"} 
+          className="flex items-center gap-2 hover:text-primary transition-colors"
+        >
+          <PlusCircle size={20} />
+          <span>Request Blood</span>
+        </Link>
+
         {user ? (
           <>
             <Link to="/dashboard" className="flex items-center gap-2 hover:text-primary transition-colors">
@@ -52,10 +60,6 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <Link to="/create-request" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <PlusCircle size={20} />
-              <span>Request Blood</span>
-            </Link>
             <Link to="/login" className="hover:text-primary transition-colors">Login</Link>
             <Link to="/register" className="btn btn-primary py-2 px-6">Join as Donor</Link>
           </>
