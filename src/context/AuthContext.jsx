@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const response = await api.post('/auth/jwt/create/', { email, password });
+    const response = await api.post('/api/auth/jwt/create/', { email, password });
     const { access, refresh } = response.data;
     localStorage.setItem('access_token', access);
     localStorage.setItem('refresh_token', refresh);
@@ -43,11 +43,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (userData) => {
-    await api.post('/auth/users/', userData);
+    await api.post('/api/auth/users/', userData);
   };
 
   const activate = async (uid, token) => {
-    await api.post('/auth/users/activation/', { uid, token });
+    await api.post('/api/auth/users/activation/', { uid, token });
   };
 
   return (
