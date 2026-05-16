@@ -53,7 +53,7 @@ const Dashboard = () => {
     <div className="space-y-8">
       <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
-          <h1 className="text-4xl font-bold">Welcome, {user.username}!</h1>
+          <h1 className="text-4xl font-bold">Welcome, {user.name}!</h1>
           <p className="text-text-muted">Manage your donations and requests here.</p>
         </div>
         <div className="flex gap-4 bg-surface p-1 rounded-xl">
