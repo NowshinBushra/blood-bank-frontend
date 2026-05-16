@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
       const token = localStorage.getItem('access_token');
       if (token) {
         try {
-          const response = await api.get('/auth/users/me/');
+          const response = await api.get('/api/auth/users/me/');
           setUser(response.data);
         } catch (error) {
           console.error('Failed to fetch user', error);
@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
     const { access, refresh } = response.data;
     localStorage.setItem('access_token', access);
     localStorage.setItem('refresh_token', refresh);
-    const userResponse = await api.get('/auth/users/me/');
+    const userResponse = await api.get('/api/auth/users/me/');
     setUser(userResponse.data);
     return userResponse.data;
   };
