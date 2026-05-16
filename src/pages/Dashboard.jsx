@@ -21,8 +21,8 @@ const Dashboard = () => {
           api.get('/api/v1/blood_requests/'),
           api.get('/api/v1/donations/')
         ]);
-        setRequests(requestsRes.data);
-        setHistory(historyRes.data);
+        setRequests(requestsRes.data.results || requestsRes.data);
+        setHistory(historyRes.data.results || historyRes.data);
       } catch {
         console.error('Error fetching dashboard data');
       } finally {
@@ -40,8 +40,8 @@ const Dashboard = () => {
         api.get('/api/v1/blood_requests/'),
         api.get('/api/v1/donations/')
       ]);
-      setRequests(requestsRes.data);
-      setHistory(historyRes.data);
+      setRequests(requestsRes.data.results || requestsRes.data);
+      setHistory(historyRes.data.results || historyRes.data);
     } catch {
       alert('Failed to accept request. You might have already donated recently.');
     }
